@@ -1,3 +1,5 @@
+" runtime したらファイル分割できるらしいそのうち
+
 "--------------------
 "" 基本的な設定
 "--------------------
@@ -18,6 +20,9 @@ set nobackup
 "スワップファイル用のディレクトリを指定する でも作成しない
 " set directory=$HOME/vimbackup
 set noswapfile
+
+" BSが効かないので
+set backspace=indent,eol,start
 
 "左右のカーソル移動で行間移動可能にする。
 set whichwrap=b,s,h,l,<,>,[,]
@@ -106,10 +111,10 @@ imap <C-p><C-r> print_r();<ESC>
 nmap <C-o><C-p> nve"0p<ESC>
 
 " 挿入モードでのカーソル移動
-inoremap <C-j> <Down>
-inoremap <C-k> <Up>
-inoremap <C-h> <Left>
-inoremap <C-l> <Right>
+"inoremap <C-j> <Down>
+"inoremap <C-k> <Up>
+"inoremap <C-h> <Left>
+"inoremap <C-l> <Right>
 
 " ESC代わり
 inoremap <C-o> <Esc>
@@ -182,11 +187,15 @@ autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 
 "-----------
 "" dein
+" $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
+" $ sh ./installer.sh .vim
+" $ mkdir .vim/dein
 "-----------
 if &compatible
   set nocompatible
 endif
-set runtimepath+=~/.vim/repos/dein/github.com/Shougo/dein.vim/
+"set runtimepath+=~/.vim/repos/dein/github.com/Shougo/dein.vim/
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim/
 
 if dein#load_state('~/.vim/repos/dein/')
   call dein#begin('~/.vim/repos/dein/')
@@ -233,7 +242,110 @@ nmap <F3> :NERDTreeToggle<CR>
 vmap v <Plug>(expand_region_expand)
 vmap <C-v> <Plug>(expand_region_shrink)
 
+"""
+" NeoComplete
+"""
+" Note: This option must be set in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
+" Disable AutoComplPop.
+let g:acp_enableAtStartup = 0
+" Use neocomplete.
+let g:neocomplete#enable_at_startup = 1
+" Use smartcase.
+let g:neocomplete#enable_smart_case = 1
+" Set minimum syntax keyword length.
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
+" Define dictionary.
+let g:neocomplete#sources#dictionary#dictionaries = {
+			\ 'default' : '',
+			\ 'vimshell' : $HOME.'/.vimshell_hist',
+			\ 'scheme' : $HOME.'/.gosh_completions'
+			\ }
+
+" Define keyword.
+if !exists('g:neocomplete#keyword_patterns')
+	let g:neocomplete#keyword_patterns = {}
+endif
+let g:neocomplete#keyword_patterns['default'] = '\h\w*'
+
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
+
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+	return (pumvisible() ? "\<C-y>" : "" ) . "\<CR>"
+	" For no inserting <CR> key.
+	"return pumvisible() ? "\<C-y>" : "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+" Close popup by <Space>.
+"inoremap <expr><Space> pumvisible() ? "\<C-y>" : "\<Space>"
+
+" AutoComplPop like behavior.
+"let g:neocomplete#enable_auto_select = 1
+
+" Shell like behavior(not recommended).
+"set completeopt+=longest
+"let g:neocomplete#enable_auto_select = 1
+"let g:neocomplete#disable_auto_complete = 1
+"inoremap <expr><TAB>  pumvisible() ? "\<Down>" : "\<C-x>\<C-u>"
+
+" Enable omni completion.
+autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
+autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
+autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
+autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
+
+" Enable heavy omni completion.
+if !exists('g:neocomplete#sources#omni#input_patterns')
+	let g:neocomplete#sources#omni#input_patterns = {}
+endif
+"let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
+"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+
+" For perlomni.vim setting.
+" https://github.com/c9s/perlomni.vim
+let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
+"""
+" / NeoComplete
+"""
+
+"""
+" NeoSnippet
+"""
+" Plugin key-mappings.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+
+" SuperTab like snippets behavior.
+" Note: It must be "imap" and "smap".  It uses <Plug> mappings.
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+
+"imap <expr><TAB>
+" \ pumvisible() ? "\<C-n>" :
+" \ neosnippet#expandable_or_jumpable() ?
+" \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
+			\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
+if has('conceal')
+	set conceallevel=2 concealcursor=niv
+endif
+"""
+" / NeoSnippet
+"""
 
 """"""""""""""""""""""""""""
 """ タブ関連
