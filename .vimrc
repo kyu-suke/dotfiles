@@ -127,7 +127,7 @@ noremap <C-s> <Esc>:w<CR>
 " :sh
 nmap <C-q><C-q> <ESC>:sh<CR>
 
-" Lender
+" Leader
 let mapleader = "\<Space>"
 noremap <Leader>h ^
 noremap <Leader>l $
