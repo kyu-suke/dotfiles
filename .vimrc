@@ -218,6 +218,9 @@ if dein#load_state('~/.vim/repos/dein/')
   call dein#add('terryma/vim-expand-region')
   call dein#add('Lokaltog/vim-easymotion')
 
+  call dein#add('mattn/emmet-vim')
+  call dein#add('fatih/vim-go')
+
   call dein#end()
 
   if dein#check_install()
