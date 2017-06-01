@@ -135,7 +135,13 @@ noremap <Leader>m %
 noremap <Leader>g G
 noremap <Leader>a :set relativenumber!<CR>
 
-
+" cmap path系
+cmap <C-p><C-m> <Space>fuel/app/classes/model/
+cmap <C-p><C-v> <Space>fuel/app/views/
+cmap <C-p><C-c> <Space>fuel/app/classes/controller/
+cmap <C-p><C-u> <Space>fuel/app/classes/util/
+cmap <C-p><C-t> <Space>fuel/app/tasks/
+cmap <C-p><C-j> <Space>public/assets/js/
 
 "-----------
 "" タグ設定
@@ -154,6 +160,7 @@ au BufNewFile,BufRead *.js set tags+=$HOME/js.tags
 let $M='./fuel/app/classes/model'
 let $V='./fuel/app/views'
 let $C='./fuel/app/classes/controller'
+let $T='./fuel/app/tasks'
 let $J='./public/assets/js'
 
 
@@ -194,8 +201,8 @@ autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 if &compatible
   set nocompatible
 endif
-"set runtimepath+=~/.vim/repos/dein/github.com/Shougo/dein.vim/
-set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim/
+set runtimepath+=~/.vim/repos/dein/github.com/Shougo/dein.vim/
+"set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim/
 
 if dein#load_state('~/.vim/repos/dein/')
   call dein#begin('~/.vim/repos/dein/')
