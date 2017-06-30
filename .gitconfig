@@ -1,0 +1,30 @@
+[user]
+	name = 金岡 勇佑
+	email = kaneoka_yusuke_gn@cyberagent.co.jp
+[push]
+	default = current
+[alias]
+	graph = log --graph --date-order --all --pretty=format:'%h %Cred%d %Cgreen%ad %Cblue%cn %Creset%s' --date=short
+	a = add
+	b = branch
+	c = commit
+	ca = commit --amend
+	co = checkout
+	s = status
+	sta = stash
+	sl = stash list
+	sa = stash apply
+	sp = stash pop
+	ss = stash save
+#	dff = difftool --no-prompt --extcmd ~/bin/icdiff-master/icdiff
+	df = ! git difftool --no-prompt --extcmd ~/bin/icdiff-master/icdiff | less -R
+
+#[pager]
+#	log = diff-highlight | less
+#	show = diff-highlight | less
+#	diff = diff-highlight | less
+[core]
+	pager = ~/diff-highlight | less
+	editor = vim
+[color]
+	ui = true

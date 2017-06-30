@@ -56,7 +56,7 @@ hi WarningMsg	guifg=salmon
 
 " syntax highlighting groups
 hi Comment	guifg=SkyBlue
-hi Constant	guifg=#ffa0a0
+hi Constant	guifg=#ffffff
 hi Identifier	guifg=palegreen
 hi Statement	guifg=khaki
 hi PreProc	guifg=indianred
@@ -95,7 +95,7 @@ hi DiffText	cterm=bold ctermbg=1
 "hi Comment	ctermfg=darkcyan
 hi Comment	ctermfg=darkgreen
 "hi Constant	ctermfg=brown
-hi Constant	ctermfg=blue
+hi Constant	ctermfg=208 guifg=black gui=none
 hi Special	ctermfg=5
 hi Identifier	ctermfg=6
 hi Statement	ctermfg=3
