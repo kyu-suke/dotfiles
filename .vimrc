@@ -1,3 +1,33 @@
+" encoding
+" script encoding
+
+
+" mmmm
+
+
+" 行番号の色
+"hi LineNr ctermfg=3
+
+" set curorline時の行番号の色
+"CursorLineNr ctermbg=4 ctermfg=0
+
+
+" 全角力
+"nnoremap <silent> い i
+"nnoremap <silent> あ a
+"nnoremap <silent> お o
+"nnoremap <silent> っｄ dd
+"nnoremap <silent> う u
+"nnoremap <silent> ：ｗｑ :wq
+
+" gui
+" set guifont=Ricty\ for\ Powerline:h24
+
+
+
+
+" mm kokomade
+
 " runtime したらファイル分割できるらしいそのうち
 
 "--------------------
@@ -72,8 +102,14 @@ set wildmode=longest:full,list
 set virtualedit+=block
 
 " syntax
-colorscheme nyarlatho
+
+" 行番号に色をつけたいけどカーソルラインはいらない
 syntax enable
+colorscheme nyarlatho
+
+set cursorline
+"hi CursorLineNr ctermbg=29 ctermfg=11
+hi clear CursorLine
 
 " 自動コメント無効
 augroup auto_comment_off
@@ -118,11 +154,12 @@ nmap <C-o><C-p> nve"0p<ESC>
 "inoremap <C-l> <Right>
 
 " ESC代わり
-inoremap <C-o> <Esc>
-noremap <C-o> <Esc>
+" inoremap <C-o> <Esc>
+" noremap <C-o> <Esc>
 
-" 保存
+" 保存 Esc
 inoremap <C-s> <Esc>:w<CR>
+" inoremap <C-s> <Esc>
 noremap <C-s> <Esc>:w<CR>
 
 " :sh
@@ -152,7 +189,6 @@ cmap <C-p><C-j> <Space>public/assets/js/
 " 拡張子で読み込みタグ変更
 au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
 au BufNewFile,BufRead *.js set tags+=$HOME/js.tags
-
 
 
 "-----------
@@ -223,7 +259,7 @@ if dein#load_state('~/.vim/repos/dein/')
   call dein#add('mattn/emmet-vim')
   call dein#add('fatih/vim-go')
 
-  call dein#add('Lokaltog/vim-powerline')
+  "call dein#add('Lokaltog/vim-powerline')
 
   call dein#end()
 
@@ -235,8 +271,7 @@ if dein#load_state('~/.vim/repos/dein/')
 endif
 
 filetype plugin indent on
-syntax enable
-
+"syntax enable
 
 
 "-----------
@@ -417,4 +452,3 @@ augroup InitialMessage
 	autocmd!
 	autocmd VimEnter * echo "viiiiiiiii!!!!!!!!"
 augroup END
-
