@@ -236,16 +236,33 @@ autocmd FileType js,vue :set filetype=javascript
 " $ sh ./installer.sh .vim
 " $ mkdir .vim/dein
 "-----------
-if &compatible
-  set nocompatible
-endif
-set runtimepath+=~/.vim/repos/dein/github.com/Shougo/dein.vim/
-"set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim/
 
-if dein#load_state('~/.vim/repos/dein/')
-  call dein#begin('~/.vim/repos/dein/')
+"dein Scripts-----------------------------
+if &compatible
+  set nocompatible               " Be iMproved
+endif
+
+" Required:
+set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
+
+" Required:
+if dein#load_state('~/.vim')
+  call dein#begin('~/.vim')
+
+  " Let dein manage dein
+  " Required:
+  call dein#add('~/.vim/repos/github.com/Shougo/dein.vim')
+
+  " Add or remove your plugins here:
+  call dein#add('Shougo/neosnippet.vim')
+  call dein#add('Shougo/neosnippet-snippets')
+
+  " You can specify revision/branch/tag.
+  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
 
   call dein#add('~/.vim/repos/dein/github.com/Shougo/dein.vim/')
+
+  call dein#add('kannokanno/previm')
 
   call dein#add('Shougo/neocomplete.vim')
   call dein#add('junegunn/vim-easy-align')
@@ -259,20 +276,16 @@ if dein#load_state('~/.vim/repos/dein/')
   call dein#add('mattn/emmet-vim')
   call dein#add('fatih/vim-go')
 
-  "call dein#add('Lokaltog/vim-powerline')
+  call dein#add('Lokaltog/vim-powerline')
 
+  " Required:
   call dein#end()
-
-  if dein#check_install()
-    call dein#install()
-  endif
-
   call dein#save_state()
 endif
 
+" Required:
 filetype plugin indent on
-"syntax enable
-
+syntax enable
 
 "-----------
 " dein
@@ -442,6 +455,19 @@ vmap <C-v> <Plug>(expand_region_shrink)
 "map <silent> <C-p> :tabprevious<CR>
 "" tp 前のタブ
 """"""""""""""""""""""""""""
+
+augroup PrevimSettings
+	autocmd!
+	autocmd BufNewFile,BufRead *.{md,mdwn,mkd,mkdn,mark*} set filetype=markdown
+augroup END
+
+" Previm
+"let g:previm_open_cmd = "open -a Safari"
+let g:previm_open_cmd = "open -a '/Applications/Google Chrome.app'"
+nnoremap [previm] <Nop>
+nmap <Leader>p [previm]
+nnoremap <silent> [previm]o :<C-u>PrevimOpen<CR>
+nnoremap <silent> [previm]r :call previm#refresh()<CR>
 
 
 
