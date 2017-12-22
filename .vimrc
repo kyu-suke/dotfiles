@@ -1,16 +1,15 @@
 " encoding
 " script encoding
 
+set laststatus=2
+set showmode
+set showcmd
+set ruler
 
-" mmmm
-
-
-" 行番号の色
-"hi LineNr ctermfg=3
+set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
 
 " set curorline時の行番号の色
 "CursorLineNr ctermbg=4 ctermfg=0
-
 
 " 全角力
 "nnoremap <silent> い i
@@ -19,14 +18,6 @@
 "nnoremap <silent> っｄ dd
 "nnoremap <silent> う u
 "nnoremap <silent> ：ｗｑ :wq
-
-" gui
-" set guifont=Ricty\ for\ Powerline:h24
-
-
-
-
-" mm kokomade
 
 " runtime したらファイル分割できるらしいそのうち
 
@@ -37,7 +28,6 @@
 set nocompatible
 
 ""新しい行のインデントを現在行と同じにする
-"set autoindent
 set cindent
 
 "検索ハイライト
@@ -70,8 +60,8 @@ set incsearch
 set number
 
 "閉括弧が入力された時、対応する括弧を強調する
-"set showmatch
-let loaded_matchparen = 1 "括弧対応させない
+set showmatch
+"let loaded_matchparen = 1 "括弧対応させない
 
 ""新しい行を作った時のインデント
 set smarttab
@@ -90,8 +80,6 @@ set nowrapscan
 " □◯とかをきれいに表示
 set ambiwidth=double
 
-" コマンドモードの補完
-"set wildmenu
 " コマンドモードでの補完設定
 set wildmode=longest:full,list
 
@@ -108,7 +96,6 @@ syntax enable
 colorscheme nyarlatho
 
 set cursorline
-"hi CursorLineNr ctermbg=29 ctermfg=11
 hi clear CursorLine
 
 " 自動コメント無効
@@ -137,33 +124,15 @@ map <F9> <ESC>:bn<CR>
 map <F8> <ESC>:ls<CR>
 " 空改行
 nmap <C-l><C-o> o<ESC>
-" バッファ一覧
-"nmap <C-l><C-l> <ESC>:ls<CR>
-"nmap <C-l><C-l> <ESC>:ls<CR>:buf 
-"nmap <C-l><C-s> <ESC>:ls<CR>:buf 
-" print_r()
-nmap <C-p><C-r> aprint_r();<ESC>
-imap <C-p><C-r> print_r();<ESC>
 " 次の検索箇所にyank内容貼付
 nmap <C-o><C-p> nve"0p<ESC>
 
-" 挿入モードでのカーソル移動
-"inoremap <C-j> <Down>
-"inoremap <C-k> <Up>
-"inoremap <C-h> <Left>
-"inoremap <C-l> <Right>
-
 " ESC代わり
-" inoremap <C-o> <Esc>
-" noremap <C-o> <Esc>
+inoremap <C-q> <Esc>
 
 " 保存 Esc
 inoremap <C-s> <Esc>:w<CR>
-" inoremap <C-s> <Esc>
 noremap <C-s> <Esc>:w<CR>
-
-" :sh
-nmap <C-q><C-q> <ESC>:sh<CR>
 
 " Leader
 let mapleader = "\<Space>"
@@ -171,38 +140,21 @@ noremap <Leader>h ^
 noremap <Leader>l $
 noremap <Leader>m %
 noremap <Leader>g G
-noremap <Leader>a :set relativenumber!<CR>
+noremap <Leader>p "0p
+noremap <Leader>P "0P
+" noremap <Leader>a :set relativenumber!<CR>
 
+" バッファ一覧
 nmap <Leader>b <ESC>:ls<CR>:buf 
-
-" cmap path系
-cmap <C-p><C-m> <Space>fuel/app/classes/model/
-cmap <C-p><C-v> <Space>fuel/app/views/
-cmap <C-p><C-c> <Space>fuel/app/classes/controller/
-cmap <C-p><C-u> <Space>fuel/app/classes/util/
-cmap <C-p><C-t> <Space>fuel/app/tasks/
-cmap <C-p><C-j> <Space>public/assets/js/
 
 "-----------
 "" タグ設定
 "-----------
-"ctag設定
+"ctag設定 XXX
 "set tags=~/hoge/tags
 " 拡張子で読み込みタグ変更
-au BufNewFile,BufRead *.php set tags+=$HOME/php.tags
-au BufNewFile,BufRead *.js set tags+=$HOME/js.tags
-
-
-"-----------
-"" PATH
-"-----------
-let $M='./fuel/app/classes/model'
-let $V='./fuel/app/views'
-let $C='./fuel/app/classes/controller'
-let $T='./fuel/app/tasks'
-let $J='./public/assets/js'
-
-
+au BufNewFile,BufRead *.php set tags+=$HOME/_php.tags
+au BufNewFile,BufRead *.js set tags+=$HOME/_js.tags
 
 "-----------
 " コマンド
@@ -213,8 +165,6 @@ let $J='./public/assets/js'
 " -nargs=+    引数が必ず必è
 "-----------
 command! -nargs=1 -complete=command Enc e ++enc=<args>
-
-
 
 "-----------
 "" その他
@@ -480,3 +430,4 @@ augroup InitialMessage
 	autocmd!
 	autocmd VimEnter * echo "viiiiiiiii!!!!!!!!"
 augroup END
+
