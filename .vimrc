@@ -139,7 +139,7 @@ map <F8> <ESC>:ls<CR>
 nmap <C-l><C-o> o<ESC>
 " バッファ一覧
 "nmap <C-l><C-l> <ESC>:ls<CR>
-nmap <C-l><C-l> <ESC>:ls<CR>:buf 
+"nmap <C-l><C-l> <ESC>:ls<CR>:buf 
 "nmap <C-l><C-s> <ESC>:ls<CR>:buf 
 " print_r()
 nmap <C-p><C-r> aprint_r();<ESC>
@@ -172,6 +172,8 @@ noremap <Leader>l $
 noremap <Leader>m %
 noremap <Leader>g G
 noremap <Leader>a :set relativenumber!<CR>
+
+nmap <Leader>b <ESC>:ls<CR>:buf 
 
 " cmap path系
 cmap <C-p><C-m> <Space>fuel/app/classes/model/
