@@ -1,5 +1,10 @@
+set nocompatible
+
 " encoding
 " script encoding
+
+runtime! plugin.vim
+" runtime! plugin-config/*.vim " todo
 
 set laststatus=2
 set showmode
@@ -10,6 +15,8 @@ set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!='
 
 set tabstop=4
 set shiftwidth=4
+
+set expandtab
 
 " set curorline時の行番号の色
 "CursorLineNr ctermbg=4 ctermfg=0
@@ -28,7 +35,7 @@ set shiftwidth=4
 "" 基本的な設定
 "--------------------
 "vi互換をオフする
-set nocompatible
+"set nocompatible
 
 ""新しい行のインデントを現在行と同じにする
 set cindent
@@ -93,7 +100,8 @@ set virtualedit+=block
 
 " 行番号に色をつけたいけどカーソルラインはいらない
 syntax enable
-colorscheme nyarlatho
+" colorscheme nyarlatho
+colorscheme iceberg
 
 set cursorline
 hi clear CursorLine
@@ -129,6 +137,11 @@ nmap <C-o><C-p> nve"0p<ESC>
 
 " ESC代わり
 inoremap <C-q> <Esc>
+
+" quotes
+"inoremap <C-;> "
+"inoremap <C-:> '
+"C-k,l,i
 
 " 保存 Esc
 inoremap <C-s> <Esc>:w<CR>
@@ -179,60 +192,6 @@ autocmd FileType js,vue :set filetype=javascript
 "highlight PMenuSbar ctermbg=4
 
 " :makeで構文チェック XXX
-
-
-
-"-----------
-"" dein
-" $ curl https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh > installer.sh
-" $ sh ./installer.sh .vim
-" $ mkdir .vim/dein
-"-----------
-
-"dein Scripts-----------------------------
-if &compatible
-  set nocompatible               " Be iMproved
-endif
-
-" Required:
-set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
-
-" Required:
-if dein#load_state('~/.vim')
-  call dein#begin('~/.vim')
-
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.vim/repos/github.com/Shougo/dein.vim')
-
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
-  call dein#add('~/.vim/repos/dein/github.com/Shougo/dein.vim/')
-
-  call dein#add('junegunn/vim-easy-align')
-  call dein#add('scrooloose/nerdtree')
-  call dein#add('Townk/vim-autoclose')
-  call dein#add('terryma/vim-expand-region')
-  call dein#add('Lokaltog/vim-easymotion')
-
-  call dein#add('mattn/emmet-vim')
-  call dein#add('fatih/vim-go')
-
-  call dein#add('Lokaltog/vim-powerline')
-
-  " Required:
-  call dein#end()
-  call dein#save_state()
-endif
-
-" Required:
-filetype plugin indent on
-syntax enable
-
-"-----------
-" dein
-"-----------
 
 " EasyAlign
 vmap <Enter> <Plug>(EasyAlign)
