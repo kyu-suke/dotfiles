@@ -50,6 +50,8 @@ if dein#load_state('~/.vim')
 
   " color
   call dein#add('cocopon/iceberg.vim')
+  call dein#add('kudabux/vim-srcery-drk')
+  call dein#add('gkjgh/cobalt')
 
   " ui util
   "call dein#add('Lokaltog/vim-powerline')
@@ -65,11 +67,11 @@ if dein#load_state('~/.vim')
   " call dein#add('christoomey/vim-tmux-navigator')
 
   " haskell
-  " call dein#add('neovimhaskell/haskell-vim')
-  " call dein#add('enomsg/vim-haskellConcealPlus')
-  " call dein#add('eagletmt/ghcmod-vim')
-  " call dein#add('eagletmt/neco-ghc')
-  " call dein#add('mpickering/hlint-refactor-vim')
+  "call dein#add('neovimhaskell/haskell-vim')
+  "call dein#add('enomsg/vim-haskellConcealPlus')
+  "call dein#add('eagletmt/ghcmod-vim')
+  "call dein#add('eagletmt/neco-ghc')
+  "call dein#add('mpickering/hlint-refactor-vim')
 
   " golang
   call dein#add('fatih/vim-go')
