@@ -52,6 +52,7 @@ if dein#load_state('~/.vim')
   call dein#add('cocopon/iceberg.vim')
   call dein#add('kudabux/vim-srcery-drk')
   call dein#add('gkjgh/cobalt')
+  call dein#add('vim-scripts/Risto-Color-Scheme')
 
   " ui util
   "call dein#add('Lokaltog/vim-powerline')
@@ -85,6 +86,11 @@ endif
 " Required:
 filetype plugin indent on
 syntax enable
+
+
+if has('vim_starting') && dein#check_install()
+  call dein#install()
+endif
 
 "-----------
 " dein
