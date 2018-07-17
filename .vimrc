@@ -86,8 +86,10 @@ nnoremap <Leader>1 :noh<CR>
 vnoremap SS :s/\%V \%V//g<CR>
 
 " baffer pre
+map <F7> <ESC>:bp<CR>
 map <Leader>9 <ESC>:bp<CR>
 " baffer next
+map <F9> <ESC>:bn<CR>
 map <Leader>0 <ESC>:bn<CR>
 " 次の検索箇所にyank内容貼付
 nmap <C-o><C-p> nve"0p<ESC>
