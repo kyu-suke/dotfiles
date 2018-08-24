@@ -61,7 +61,7 @@ syntax enable
 " colorscheme nyarlatho
 " colorscheme iceberg
 colorscheme slate
-set cursorline
+set nocursorline
 hi clear CursorLine
 
 " 自動コメント無効
