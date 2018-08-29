@@ -9,7 +9,7 @@ set ruler
 set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
 set tabstop=4
 set shiftwidth=4
-set expandtab
+"set expandtab
 set cindent
 set hlsearch
 set incsearch
@@ -87,8 +87,10 @@ vnoremap SS :s/\%V \%V//g<CR>
 
 " baffer pre
 map <Leader>9 <ESC>:bp<CR>
+map <F7> <ESC>:bp<CR>
 " baffer next
 map <Leader>0 <ESC>:bn<CR>
+map <F9> <ESC>:bn<CR>
 " 次の検索箇所にyank内容貼付
 nmap <C-o><C-p> nve"0p<ESC>
 
@@ -196,3 +198,4 @@ augroup InitialMessage
 	autocmd VimEnter * echo "viiiiiiiii!!!!!!!!"
 augroup END
 
+set nocursorline
