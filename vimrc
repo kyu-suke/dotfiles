@@ -61,7 +61,7 @@ syntax enable
 " colorscheme nyarlatho
 " colorscheme iceberg
 colorscheme slate
-set cursorline
+set nocursorline
 hi clear CursorLine
 
 " 自動コメント無効
@@ -86,9 +86,11 @@ nnoremap <Leader>1 :noh<CR>
 vnoremap SS :s/\%V \%V//g<CR>
 
 " baffer pre
+map <F7> <ESC>:bp<CR>
 map <Leader>9 <ESC>:bp<CR>
 map <F7> <ESC>:bp<CR>
 " baffer next
+map <F9> <ESC>:bn<CR>
 map <Leader>0 <ESC>:bn<CR>
 map <F9> <ESC>:bn<CR>
 " 次の検索箇所にyank内容貼付
