@@ -14,50 +14,11 @@ endif
 set runtimepath+=~/.vim/repos/github.com/Shougo/dein.vim
 
 " Required:
+let s:toml_file = fnamemodify(expand('<sfile>'), ':h').'/dein.toml'
 if dein#load_state('~/.vim')
   call dein#begin('~/.vim')
 
-  " Let dein manage dein
-  " Required:
-  call dein#add('~/.vim/repos/github.com/Shougo/dein.vim')
-
-  " You can specify revision/branch/tag.
-  " call dein#add('Shougo/deol.nvim', { 'rev': 'a1b5108fd' })
-
-  "call dein#add('~/.vim/repos/dein/github.com/Shougo/dein.vim/')
-
-  " nanika
-  call dein#add('terryma/vim-expand-region')
-  call dein#add('Lokaltog/vim-easymotion')
-
-  " aligner
-  call dein#add('junegunn/vim-easy-align')
-
-  " input util
-  call dein#add('Townk/vim-autoclose')
-
-  " selector
-  call dein#add('ctrlpvim/ctrlp.vim') " using
-  call dein#add('scrooloose/nerdtree')
-
-  " color
-  call dein#add('cocopon/iceberg.vim')
-  call dein#add('kudabux/vim-srcery-drk')
-  call dein#add('gkjgh/cobalt')
-  call dein#add('vim-scripts/Risto-Color-Scheme')
-
-  " ui util
-  call dein#add('vim-airline/vim-airline') " using
-
-  " haskell
-  "call dein#add('neovimhaskell/haskell-vim')
-  "call dein#add('enomsg/vim-haskellConcealPlus')
-  "call dein#add('eagletmt/ghcmod-vim')
-  "call dein#add('eagletmt/neco-ghc')
-  "call dein#add('mpickering/hlint-refactor-vim')
-
-  " golang
-  call dein#add('fatih/vim-go')
+  call dein#load_toml(s:toml_file)
 
   " Required:
   call dein#end()
@@ -76,3 +37,8 @@ endif
 "-----------
 " dein
 "-----------
+"set rtp+=~/.vim/repos/github.com/autozimu/LanguageClient-neovim
+"let g:LanguageClient_serverCommands = { 'haskell': ['hie-wrapper'] }
+
+
+

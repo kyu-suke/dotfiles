@@ -1,0 +1,89 @@
+[[plugins]]
+repo  = 'Shougo/vimproc.vim'
+build = 'make'
+
+[[plugins]]
+repo = 'Shougo/dein.vim'
+
+[[plugins]] # カーソル位置のコンテキストに合わせてftを切り替える
+repo = 'osyo-manga/vim-precious'
+depends = ['context_filetype.vim']
+
+[[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
+repo = 'Shougo/context_filetype.vim'
+
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+on_ft = 'toml'
+
+[[plugins]] # カラースキーマ
+repo = 'w0ng/vim-hybrid'
+hook_add = '''
+  set background=dark
+  " colorscheme 設定は source 後に行う必要があるので VimEnter で行う。
+  " 但し Colorscheme イベントの発生が抑制されないよう nented を付ける。
+  " au MyAutoCmd VimEnter * nested colorscheme hybrid
+'''
+
+[[plugins]] # toml syntax
+repo = 'cespare/vim-toml'
+
+[[plugins]] # toml syntax
+repo = 'terryma/vim-expand-region'
+
+[[plugins]] # toml syntax
+repo = 'Lokaltog/vim-easymotion'
+
+[[plugins]] # toml syntax
+repo = 'junegunn/vim-easy-align'
+
+[[plugins]] # toml syntax
+repo = 'Townk/vim-autoclose'
+
+[[plugins]] # toml syntax
+repo = 'ctrlpvim/ctrlp.vim'
+
+[[plugins]] # toml syntax
+repo = 'scrooloose/nerdtree'
+
+[[plugins]] # toml syntax
+repo = 'cocopon/iceberg.vim'
+
+[[plugins]] # toml syntax
+repo = 'kudabux/vim-srcery-drk'
+
+[[plugins]] # toml syntax
+repo = 'gkjgh/cobalt'
+
+[[plugins]] # toml syntax
+repo = 'vim-scripts/Risto-Color-Scheme'
+
+
+[[plugins]] # toml syntax
+repo = 'vim-airline/vim-airline'
+
+#[[plugins]] # toml syntax
+#repo = 'neovimhaskell/haskell-vim'
+#
+#[[plugins]] # toml syntax
+#repo = 'enomsg/vim-haskellConcealPlus'
+
+#[[plugins]] # toml syntax
+#repo = 'eagletmt/ghcmod-vim'
+#
+#[[plugins]] # toml syntax
+#repo = 'eagletmt/neco-ghc'
+
+#[[plugins]] # toml syntax
+#repo = 'mpickering/hlint-refactor-vim'
+
+
+[[plugins]] # toml syntax
+repo = 'fatih/vim-go'
+
+
+[[plugins]]
+repo = 'autozimu/LanguageClient-neovim'
+rev = 'next'
+build = 'bash install.sh'
+
