@@ -1,0 +1,10 @@
+
+let mapleader = " "
+noremap <Leader>h ^
+noremap <Leader>l $
+noremap <Leader>m %
+noremap <Leader>g G
+noremap <Leader>a :set relativenumber!<CR>
+
+
+
