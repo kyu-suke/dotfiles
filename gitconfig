@@ -8,6 +8,7 @@
 	a = add
 	b = branch
 	c = commit
+	l = log
 	ca = commit --amend
 	co = checkout
 	s = status
