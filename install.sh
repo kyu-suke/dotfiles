@@ -1,4 +1,4 @@
-brew install wget
+brew install python
 
 git clone https://github.com/CHH/phpenv.git
 phpenv/bin/phpenv-install.sh

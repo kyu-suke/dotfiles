@@ -103,6 +103,15 @@ map <F9> <ESC>:bn<CR>
 " 次の検索箇所にyank内容貼付
 nmap <C-o><C-p> nve"0p<ESC>
 
+" ESC代わり
+" inoremap <C-q> <Esc>
+
+" quotes
+" inoremap <C-k> "
+" inoremap <C-l> '
+
+" 保存 Esc
+
 inoremap <C-s> <Esc>:w<CR>
 noremap <C-s> <Esc>:w<CR>
 
