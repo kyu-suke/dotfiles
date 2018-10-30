@@ -39,6 +39,8 @@ alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $U
 
 # For PHP Environment
 
+source ~/dotfiles/git-completion.bash
+
 
 
 stty -ixon -ixoff

@@ -54,6 +54,13 @@ set virtualedit+=block
 " -------
 runtime! plugin.vim
 
+
+"
+" let
+"
+let g:go_fmt_command = "goimports"
+
+
 " -------
 " Syntax
 " -------
