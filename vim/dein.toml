@@ -62,25 +62,9 @@ repo = 'vim-scripts/Risto-Color-Scheme'
 [[plugins]] # toml syntax
 repo = 'vim-airline/vim-airline'
 
-#[[plugins]] # toml syntax
-#repo = 'neovimhaskell/haskell-vim'
-#
-#[[plugins]] # toml syntax
-#repo = 'enomsg/vim-haskellConcealPlus'
-
-#[[plugins]] # toml syntax
-#repo = 'eagletmt/ghcmod-vim'
-#
-#[[plugins]] # toml syntax
-#repo = 'eagletmt/neco-ghc'
-
-#[[plugins]] # toml syntax
-#repo = 'mpickering/hlint-refactor-vim'
-
 
 [[plugins]] # toml syntax
 repo = 'fatih/vim-go'
-
 
 [[plugins]]
 repo = 'autozimu/LanguageClient-neovim'
