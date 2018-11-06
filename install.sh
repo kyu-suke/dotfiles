@@ -9,3 +9,6 @@ echo "complete -o bashdefault -o default -o nospace -F _git g 2>/dev/null \ || c
 pip3 install icdiff
 pip3 install diff-highlight
 
+
+# brew cask install homebrew/cask-versions/sequel-pro-nightly
+

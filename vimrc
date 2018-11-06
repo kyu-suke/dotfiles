@@ -59,6 +59,7 @@ runtime! plugin.vim
 " let
 "
 let g:go_fmt_command = "goimports"
+set autowrite
 
 
 set rtp+=~/.vim/repos/github.com/autozimu/LanguageClient-neovim
