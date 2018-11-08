@@ -53,6 +53,8 @@ set virtualedit+=block
 " Runtime
 " -------
 runtime! plugin.vim
+" runtime! ale.vim
+runtime! vimgo.vim
 
 
 "
