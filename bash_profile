@@ -10,3 +10,5 @@ if [ -f '/Users/kyusuke/Downloads/google-cloud-sdk/path.bash.inc' ]; then . '/Us
 if [ -f '/Users/kyusuke/Downloads/google-cloud-sdk/completion.bash.inc' ]; then . '/Users/kyusuke/Downloads/google-cloud-sdk/completion.bash.inc'; fi
 
 export GOOGLE_APPLICATION_CREDENTIALS=~/.ssh/__newagent-5828c-21defff6cc72.json
+
+eval "$(rbenv init -)"
