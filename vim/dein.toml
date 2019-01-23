@@ -62,6 +62,11 @@ repo = 'vim-scripts/Risto-Color-Scheme'
 [[plugins]] # toml syntax
 repo = 'vim-airline/vim-airline'
 
+[[plugins]] # toml syntax
+repo = 'vim-airline/vim-airline-themes'
+
+#[[plugins]]
+#repo = 'vim-scripts/buftabs'
 
 [[plugins]] # toml syntax
 repo = 'fatih/vim-go'
@@ -71,7 +76,4 @@ repo = 'autozimu/LanguageClient-neovim'
 rev = 'next'
 build = 'bash install.sh'
 
-
-[[plugins]]
-repo = 'vim-scripts/buftabs'
 
