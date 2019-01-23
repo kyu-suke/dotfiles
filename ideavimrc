@@ -6,5 +6,8 @@ noremap <Leader>m %
 noremap <Leader>g G
 noremap <Leader>a :set relativenumber!<CR>
 
+set hlsearch
+set nowrapscan
+set whichwrap=b,s,h,l,<,>,[,]
 
 

@@ -185,6 +185,8 @@ command! -nargs=1 -complete=command Enc e ++enc=<args>
 autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 autocmd FileType js,vue :set filetype=javascript
 
+autocmd BufEnter *.rb,*.slim,*.coffee :set expandtab
+autocmd BufEnter *.rb,*.slim,*.coffee :set shiftwidth=2
 
 """"""""""""""""""""""""""""
 """ タブ関連
