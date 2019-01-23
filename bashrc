@@ -1,10 +1,36 @@
 # .bashrc
 
 # path setting
-export GOPATH=$HOME/.go
-export PATH=~/.local/bin:$GOPATH/bin:$PATH
-export PATH=/usr/local/bin:$PATH
+PATH=~/.local/bin:$GOPATH/bin:$PATH
+PATH=/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/pear/bin
+
+
 export LSCOLORS=gxfxcxdxbxegedabagacad
+
+export GOPATH=$HOME/.go
+export GOPATH=/Users/b06453/go/code/go-local
+
+
+# export NODEBREW_ROOT=/Users/b06453/.nodebrew
+export PATH=$HOME/.nodebrew/current/bin:$PATH
+
+# NodeBrew
+#You need to manually run setup_dirs to create directories required by nodebrew:
+#  /usr/local/opt/nodebrew/bin/nodebrew setup_dirs
+#
+#Add path:
+#  export PATH=$HOME/.nodebrew/current/bin:$PATH
+#
+#To use Homebrew's directories rather than ~/.nodebrew add to your profile:
+#  export NODEBREW_ROOT=/usr/local/var/nodebrew
+#
+#Bash completion has been installed to:
+#  /usr/local/etc/bash_completion.d
+#
+#zsh completions have been installed to:
+#  /usr/local/share/zsh/site-functions
+
 
 
 export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`

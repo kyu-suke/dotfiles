@@ -72,3 +72,6 @@ rev = 'next'
 build = 'bash install.sh'
 
 
+[[plugins]]
+repo = 'vim-scripts/buftabs'
+

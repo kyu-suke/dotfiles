@@ -1,12 +1,31 @@
+
+" ******************** buftabs ********************
+" バッファタブにパスを省略してファイル名のみ表示する
+let g:buftabs_only_basename=1
+" バッファタブをステータスライン内に表示する
+let g:buftabs_in_statusline=1
+" 現在のバッファをハイライト
+let g:buftabs_active_highlight_group="Visual"
+" ステータスライン
+set statusline=%=\ [%{(&fenc!=''?&fenc:&enc)}/%{&ff}]\[%Y]\[%04l,%04v][%p%%]
+" ステータスラインを常に表示
+set laststatus=2
+
+
+
+
+
+"autocmd CursorMovedI * :call vimproc#system_bg($HOME . "/bin/vim-key-sound.rb '" . getline('.')[col('.') - 2] . "'")
+
 " -------
 " Common
 " -------
 set nocompatible
-set laststatus=2
+"set laststatus=2
 set showmode
 set showcmd
 set ruler
-set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
+"set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
 set tabstop=4
 set shiftwidth=4
 "set expandtab
@@ -185,6 +204,8 @@ command! -nargs=1 -complete=command Enc e ++enc=<args>
 autocmd FileType php,ctp :set dictionary=~/.vim/dict/php.dict
 autocmd FileType js,vue :set filetype=javascript
 
+autocmd BufEnter *.js,*.vue,*.html :set shiftwidth=2
+autocmd BufEnter *.js,*.vue,*.html :set expandtab
 
 """"""""""""""""""""""""""""
 """ タブ関連
