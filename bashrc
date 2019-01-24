@@ -1,9 +1,13 @@
 # .bashrc
 
 # path setting
-PATH=~/.local/bin:$GOPATH/bin:$PATH
-PATH=/usr/local/bin:$PATH
+export GOPATH=$HOME/.go
+export PATH=~/.local/bin:$GOPATH/bin:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=$PATH:$HOME/pear/bin
+
+export PATH="$HOME/.rbenv/shims:$PATH"
+eval "$(rbenv init -)"
 
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
@@ -36,6 +40,7 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
 PATH=${JAVA_HOME}/bin:${PATH}
 
+
 export PATH="$HOME/.phpenv/bin:$PATH"
 eval "$(phpenv init -)"
 
@@ -47,7 +52,7 @@ alias v='vim'
 alias gitbbk='~/shell/b_bk.sh'
 alias gitbdel='~/shell/b_del.sh'
 
-alias grep='grep --color=always --exclude-dir=fuel/app/logs'
+alias grep='ggrep --color=always'
 alias gr='grep'
 alias grr='grep -r'
 

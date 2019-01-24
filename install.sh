@@ -1,6 +1,9 @@
 # xcode-select --install
 
 brew install python
+brew install rbenv
+brew install grep
+
 # brew install re2c
 # brew install openssl
 # brew install bison
@@ -26,7 +29,8 @@ pip3 install diff-highlight
 
 # brew cask install homebrew/cask-versions/sequel-pro-nightly
 
-source ~/.bashrc
-
+source ./bashrc
+curl -fsSL https://github.com/rbenv/rbenv-installer/raw/master/bin/rbenv-doctor | bash
+brew upgrade rbenv ruby-build
 
 
