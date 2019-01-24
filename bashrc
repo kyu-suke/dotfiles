@@ -68,6 +68,7 @@ alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $U
 source ~/dotfiles/git-completion.bash
 
 
+source <(kubectl completion bash)
 
 stty -ixon -ixoff
 
