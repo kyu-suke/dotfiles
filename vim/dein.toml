@@ -65,6 +65,9 @@ repo = 'vim-airline/vim-airline'
 [[plugins]] # toml syntax
 repo = 'vim-airline/vim-airline-themes'
 
+[[plugins]] # toml syntax
+repo = 'bling/vim-bufferline'
+
 #[[plugins]]
 #repo = 'vim-scripts/buftabs'
 

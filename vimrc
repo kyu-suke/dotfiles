@@ -57,8 +57,8 @@ set virtualedit+=block
 let g:go_fmt_command = "goimports"
 set autowrite
 
-let g:airline#extensions#tabline#enabled = 1
-let g:airline#extensions#tabline#buffer_nr_show=1
+" let g:airline#extensions#tabline#enabled = 1
+" let g:airline#extensions#tabline#buffer_nr_show=1
 
 
 set rtp+=~/.vim/repos/github.com/autozimu/LanguageClient-neovim

@@ -80,6 +80,10 @@ let g:rails_modelines=0
 
 " ctrlp
 let g:ctrlp_map = '<Nop>'
-nmap <Leader>e :<C-u>CtrlP<Space>
+let g:ctrlp_clear_cache_on_exit = 0
+" nmap <Leader>e :<C-u>CtrlP<Space>
+nmap <Leader>e :<C-u>CtrlP<CR>
+" nmap <Leader>e :<C-u>CtrlPCurWD<CR>
+
 
 
