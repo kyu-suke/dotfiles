@@ -78,4 +78,8 @@ let g:rails_modelines=0
 "}}}
 
 
+" ctrlp
+let g:ctrlp_map = '<Nop>'
+nmap <Leader>e :<C-u>CtrlP<Space>
+
 
