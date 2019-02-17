@@ -77,3 +77,9 @@ source <(kubectl completion bash)
 
 stty -ixon -ixoff
 
+# itermのタブ名
+# echo -ne "\033]0;${USER}@${LANG}\007"
+function tabname() {
+  echo -ne "\033]0;$1\007"
+}
+

@@ -88,3 +88,6 @@ repo = 'slim-template/vim-slim'
 [[plugins]]
 repo = 'kchmck/vim-coffee-script'
 
+[[plugins]]
+repo = 'vim-scripts/ruby-matchit'
+

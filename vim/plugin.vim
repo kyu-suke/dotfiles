@@ -87,3 +87,8 @@ nmap <Leader>e :<C-u>CtrlP<CR>
 
 
 
+if !exists('loaded_matchit')
+  " matchitを有効化
+  runtime macros/matchit.vim
+endif
+
