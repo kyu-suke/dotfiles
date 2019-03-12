@@ -83,3 +83,7 @@ function tabname() {
   echo -ne "\033]0;$1\007"
 }
 
+function vgr() {
+  vim $(grep -lr --color $1 $2)
+}
+
