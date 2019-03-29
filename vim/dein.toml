@@ -12,7 +12,7 @@ depends = ['context_filetype.vim']
 [[plugins]] # カーソル位置のコンテキストのftを判定するライブラリ
 repo = 'Shougo/context_filetype.vim'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'cespare/vim-toml'
 on_ft = 'toml'
 
@@ -25,53 +25,53 @@ hook_add = '''
   " au MyAutoCmd VimEnter * nested colorscheme hybrid
 '''
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'cespare/vim-toml'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'terryma/vim-expand-region'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'Lokaltog/vim-easymotion'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'junegunn/vim-easy-align'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'Townk/vim-autoclose'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'ctrlpvim/ctrlp.vim'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'scrooloose/nerdtree'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'cocopon/iceberg.vim'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'kudabux/vim-srcery-drk'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'gkjgh/cobalt'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'vim-scripts/Risto-Color-Scheme'
 
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'vim-airline/vim-airline'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'vim-airline/vim-airline-themes'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'bling/vim-bufferline'
 
 #[[plugins]]
 #repo = 'vim-scripts/buftabs'
 
-[[plugins]] # toml syntax
+[[plugins]]
 repo = 'fatih/vim-go'
 
 [[plugins]]
@@ -90,4 +90,7 @@ repo = 'kchmck/vim-coffee-script'
 
 [[plugins]]
 repo = 'vim-scripts/ruby-matchit'
+
+[[plugins]]
+repo = 'tpope/vim-abolish'
 
