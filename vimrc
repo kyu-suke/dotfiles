@@ -255,3 +255,4 @@ runtime! plugin.vim
 " runtime! ale.vim
 runtime! vimgo.vim
 
+runtime! codef/*
