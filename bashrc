@@ -12,12 +12,18 @@ eval "$(rbenv init -)"
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
 
-export GOPATH=$HOME/.go
-export GOPATH=/Users/b06453/go/code/go-local
+#export GOPATH=~/go/code/go-local
 
 
 # export NODEBREW_ROOT=/Users/b06453/.nodebrew
+
+export LDFLAGS="-L/usr/local/opt/openssl/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl/include"
+
 export PATH=$HOME/.nodebrew/current/bin:$PATH
+export NODEBREW_ROOT=/usr/local/var/nodebrew
+
+
 
 # NodeBrew
 #You need to manually run setup_dirs to create directories required by nodebrew:
