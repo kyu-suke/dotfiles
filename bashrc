@@ -24,6 +24,8 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 
 
+export EDITOR=vi
+
 
 # NodeBrew
 #You need to manually run setup_dirs to create directories required by nodebrew:
