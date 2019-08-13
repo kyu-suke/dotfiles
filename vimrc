@@ -190,53 +190,37 @@ autocmd BufEnter *.rb,*.erb,*.slim,*.rake,*.coffee :set shiftwidth=2
 autocmd BufEnter *.js,*.vue,*.html :set shiftwidth=2
 autocmd BufEnter *.js,*.vue,*.html :set expandtab
 
-""""""""""""""""""""""""""""
-""" タブ関連
-"" Anywhere SID.
-"function! s:SID_PREFIX()
-"	return matchstr(expand('<sfile>'), '<SNR>\d\+_\zeSID_PREFIX$')
-"endfunction
+
+if has("autocmd")
+  "ファイルタイプの検索を有効にする
+  filetype plugin on
+  "ファイルタイプに合わせたインデントを利用
+  filetype indent on
+  "sw=softtabstop, sts=shiftwidth, ts=tabstop, et=expandtabの略
+  autocmd FileType c           setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType ruby        setlocal sw=2 sts=2 ts=2 et
+  autocmd FileType js          setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType zsh         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType python      setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scala       setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType json        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType html        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType css         setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType scss        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType sass        setlocal sw=4 sts=4 ts=4 et
+  autocmd FileType javascript  setlocal sw=4 sts=4 ts=4 et
+endif
+
+
+"augroup ProjectSetup
+"au BufRead,BufEnter /path/to/project1/* set et sts=2 cindent cinoptions=...
+"au BufRead,BufEnter /path/to/project2/* set noet sts=4 cindent cinoptions=...
+"augroup END
 "
-"" Set tabline.
-"function! s:my_tabline()  "{{{
-"	let s = ''
-"	for i in range(1, tabpagenr('$'))
-"		let bufnrs = tabpagebuflist(i)
-"		let bufnr = bufnrs[tabpagewinnr(i) - 1]  " first window, first appears
-"		let no = i  " display 0-origin tabpagenr.
-"		let mod = getbufvar(bufnr, '&modified') ? '!' : ' '
-"		let title = fnamemodify(bufname(bufnr), ':t')
-"		let title = '[' . title . ']'
-"		let s .= '%'.i.'T'
-"		let s .= '%#' . (i == tabpagenr() ? 'TabLineSel' : 'TabLine') . '#'
-"		let s .= no . ':' . title
-"		let s .= mod
-"		let s .= '%#TabLineFill# '
-"	endfor
-"	let s .= '%#TabLineFill#%T%=%#TabLine#'
-"	return s
-"endfunction "}}}
-"let &tabline = '%!'. s:SID_PREFIX() . 'my_tabline()'
-"set showtabline=2 " 常にタブラインを表示
 "
-"" The prefix key.
-"nnoremap    [Tag]   <Nop>
-"nmap    t [Tag]
-"" Tab jump
-"for n in range(1, 9)
-"	execute 'nnoremap <silent> [Tag]'.n  ':<C-u>tabnext'.n.'<CR>'
-"endfor
-"" t1 で1番左のタブ、t2 で1番左から2番目のタブにジャンプ
-"
-"map <silent> [Tag]c :tablast <bar> tabnew<CR>
-"" tc 新しいタブを一番右に作る
-"map <silent> [Tag]x :tabclose<CR>
-"" tx タブを閉じる
-"map <silent> <C-n> :tabnext<CR>
-"" tn 次のタブ
-"map <silent> <C-p> :tabprevious<CR>
-"" tp 前のタブ
-""""""""""""""""""""""""""""
+"au BufRead,BufEnter /path/to/project1/*.{c,h} set noet sts=0 cindent cinoptions=...
+"au BufRead,BufEnter /path/to/project1/*.py set et sts=4
 
 "-----------
 "" WELCOME

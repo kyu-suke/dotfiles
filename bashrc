@@ -68,7 +68,7 @@ alias gits='git status'
 alias gita='git add'
 
 alias g='git'
-alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID -p 8000:8000 codesimple/elm:0.19'
+#alias elm='docker run -it --rm -v "$(pwd):/code" -w "/code" -e "HOME=/tmp" -u $UID:$GID -p 8000:8000 codesimple/elm:0.19'
 
 # alias gitcommitlog='git for-each-ref --format=\'%\(committerdate\)%09%\(authorname\)%09%\(refname\)\' | sort -k5n -k2M -k3n -k4n | grep remotes | awk -F "\t" \'{ printf "%-32s %-27s %s\n", \$1, \$2, \$3 }\''
 # commiterName authorName出すやつ ↓　
