@@ -1,3 +1,4 @@
+.ruby-version
 .bash_profile
 .bashrc
 vim/.netrwhist
@@ -14,4 +15,4 @@ vim/state_vi.vim
 vim/cache_vi
 phpenv/
 git-completion.bash
-
+vim/view/

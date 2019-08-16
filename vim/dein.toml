@@ -94,3 +94,5 @@ repo = 'vim-scripts/ruby-matchit'
 [[plugins]]
 repo = 'tpope/vim-abolish'
 
+[[plugins]]
+repo = 'ElmCast/elm-vim'
