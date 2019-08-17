@@ -116,3 +116,4 @@ augroup InitialMessage
 augroup END
 
 
+highlight CursorLine NONE
