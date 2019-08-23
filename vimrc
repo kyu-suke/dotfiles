@@ -65,8 +65,10 @@ nnoremap <Leader>1 :noh<CR>
 vnoremap SS :s/\%V \%V//g<CR>
 
 " baffer pre
-map <Leader>9 <ESC>:bp<CR>
-map <Leader>0 <ESC>:bn<CR>
+"map <Leader>9 <ESC>:bp<CR>
+"map <Leader>0 <ESC>:bn<CR>
+map <C-k> <ESC>:bp<CR>
+map <C-j> <ESC>:bn<CR>
 
 " yank paste
 nmap <C-p><C-p> nve"0p<ESC>
