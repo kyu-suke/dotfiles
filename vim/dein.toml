@@ -50,9 +50,6 @@ repo = 'scrooloose/nerdtree'
 repo = 'cocopon/iceberg.vim'
 
 [[plugins]]
-repo = 'kudabux/vim-srcery-drk'
-
-[[plugins]]
 repo = 'gkjgh/cobalt'
 
 [[plugins]]

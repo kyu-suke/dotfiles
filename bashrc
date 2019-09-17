@@ -18,8 +18,8 @@ export NODEBREW_ROOT=/usr/local/var/nodebrew
 
 export EDITOR=vi
 
-export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
-PATH=${JAVA_HOME}/bin:${PATH}
+#export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
+#PATH=${JAVA_HOME}/bin:${PATH}
 
 alias ls='ls -G'
 alias ll='ls -l'
@@ -32,8 +32,8 @@ alias grr='grep -r'
 
 alias g='git'
 
-source ~/dotfiles/git-completion.bash
-source <(kubectl completion bash)
+# source ~/dotfiles/git-completion.bash
+# source <(kubectl completion bash)
 
 stty -ixon -ixoff
 
