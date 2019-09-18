@@ -53,3 +53,4 @@ if [ -e ~/.secrets/bashrc ]; then
 else
   echo "file NOT found."
 fi
+
