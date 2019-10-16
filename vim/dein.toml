@@ -93,3 +93,10 @@ repo = 'tpope/vim-abolish'
 
 [[plugins]]
 repo = 'ElmCast/elm-vim'
+
+[[plugins]]
+repo = 'posva/vim-vue'
+
+[[plugins]]
+repo = 'leafgarland/typescript-vim'
+

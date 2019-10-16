@@ -1,12 +1,5 @@
 # .bashrc
 
-export GOPATH=$HOME/.go
-export PATH=~/.local/bin:$GOPATH/bin:$PATH
-export PATH=/usr/local/bin:$PATH
-export PATH=$PATH:$HOME/pear/bin
-export PATH="$HOME/.rbenv/shims:$PATH"
-eval "$(rbenv init -)"
-
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export GOPATH=~/go/code/go-local
 
@@ -16,7 +9,14 @@ export CPPFLAGS="-I/usr/local/opt/openssl/include"
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 
+export PATH=~/.local/bin:$GOPATH/bin:$PATH
+export PATH=/usr/local/bin:$PATH
+export PATH=$PATH:$HOME/pear/bin
+export PATH="$HOME/.rbenv/shims:$PATH"
+
 export EDITOR=vi
+
+eval "$(rbenv init -)"
 
 #export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
 #PATH=${JAVA_HOME}/bin:${PATH}

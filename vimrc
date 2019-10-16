@@ -24,10 +24,6 @@ set backspace=indent,eol,start
 set wildmode=longest:full,list
 set virtualedit+=block
 
-" grep
-set grepformat=%f:%l:%m,%f:%l%m,%f\ \ %l%m,%f
-set grepprg=grep\ -nh
-
 " unvisible char
 set list
 set listchars=tab:\|\ ,trail:.  " tab -> | , space -> .
@@ -65,8 +61,6 @@ nnoremap <Leader>1 :noh<CR>
 vnoremap SS :s/\%V \%V//g<CR>
 
 " baffer pre
-"map <Leader>9 <ESC>:bp<CR>
-"map <Leader>0 <ESC>:bn<CR>
 map <C-k> <ESC>:bp<CR>
 map <C-j> <ESC>:bn<CR>
 
@@ -100,13 +94,13 @@ nmap <Leader>b <ESC>:ls<CR>:buf
 "-----------
 command! -nargs=1 -complete=command Enc e ++enc=<args>
 
-if filereadable(expand('~/.secret/path.vim'))
-  source ~/.secret/path.vim
+" -------
+" import
+" -------
+if filereadable(expand('~/.secrets/path.vim'))
+  source ~/.secrets/path.vim
 endif
 
-" -------
-" Runtime
-" -------
 runtime! plugins/*
 
 "-----------
@@ -119,3 +113,26 @@ augroup END
 
 
 highlight CursorLine NONE
+
+
+
+
+
+" TODO
+command! -nargs=* -complete=command Grr !grep -r <args>
+" C-x C-f : filepath completion
+" C-x C-l : line completion
+" C-x C-o : omni completion
+" TODO
+" TODO
+" TODO
+" TODO
+" TODO
+" TODO
+" TODO
+" !!ls : type !!ls in insert mode, enter :.!ls in command line
+" :r! ls : write result
+" g;, g, : jump change position
+" vimgrep
+" scratch.vim
+

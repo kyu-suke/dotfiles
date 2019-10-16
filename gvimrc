@@ -1,1 +1,1 @@
-colo delek
+colo slate
