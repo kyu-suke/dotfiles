@@ -1,5 +1,5 @@
 set bell-style none
 "\C-g": " | grep "
-"\e[D":backward-word # cursor left
-"\e[C":forward-word # cursor right
+# "\e[D":backward-word # cursor left
+# "\e[C":forward-word # cursor right
 

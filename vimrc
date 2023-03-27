@@ -7,15 +7,11 @@ set showmode
 set showcmd
 set ruler
 set statusline=%{expand('%:p:t')}\ %<[%{expand('%:p:h')}]%=\ %m%r%y%w[%{&fenc!=''?&fenc:&enc}][%{&ff}][%3l,%3c,%3p]
-set tabstop=4
-set shiftwidth=4
-set cindent
 set hlsearch
 set incsearch
 set hidden
 set whichwrap=b,s,h,l,<,>,[,]
 set number
-set smarttab
 set nowrapscan
 set showmatch
 set nobackup
@@ -23,6 +19,17 @@ set noswapfile
 set backspace=indent,eol,start
 set wildmode=longest:full,list
 set virtualedit+=block
+set expandtab
+
+"set cindent
+set shiftwidth=2
+set tabstop=2
+"set smarttab
+
+"set noautoindent
+"set nosmartindent
+"set nocindent
+
 
 " unvisible char
 set list
@@ -70,6 +77,7 @@ nmap <C-p><C-p> nve"0p<ESC>
 " quotes
 inoremap <C-k> "
 inoremap <C-l> '
+inoremap <C-@> <Esc>
 
 " save
 inoremap <C-s> <Esc>:w<CR>

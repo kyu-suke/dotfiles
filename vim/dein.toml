@@ -100,3 +100,15 @@ repo = 'posva/vim-vue'
 [[plugins]]
 repo = 'leafgarland/typescript-vim'
 
+[[plugins]]
+repo = 'FrigoEU/psc-ide-vim'
+
+[[plugins]]
+repo = 'purescript-contrib/purescript-vim'
+
+[[plugins]]
+repo = 'kovisoft/slimv'
+
+[[plugins]]
+repo = 'rust-lang/rust.vim'
+
