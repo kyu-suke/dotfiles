@@ -7,7 +7,7 @@ fi
 
 # brew install
 brew install git grep gnu-sed
-brew install --cask obsidian kindle visual-studio-code brave-browser google-chrome arc clipy discord orbstack git grep
+brew install --cask obsidian kindle visual-studio-code brave-browser google-chrome arc clipy discord orbstack
 
 
 # curl https://raw.githubusercontent.com/git/git/master/contrib/completion/git-completion.bash > ./git-completion.bash
