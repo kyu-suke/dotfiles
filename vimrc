@@ -38,6 +38,8 @@ set listchars=tab:\|\ ,trail:.  " tab -> | , space -> .
 " show □◯と
 set ambiwidth=double
 
+" runtime! plugins/*
+
 " -------
 " Syntax
 " -------
@@ -115,8 +117,6 @@ command! -nargs=1 -complete=command Enc e ++enc=<args>
 if filereadable(expand('~/.secrets/path.vim'))
   source ~/.secrets/path.vim
 endif
-
-runtime! plugins/*
 
 "-----------
 "" WELCOME

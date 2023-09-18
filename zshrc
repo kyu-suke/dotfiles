@@ -24,7 +24,9 @@ export NODEBREW_ROOT=/usr/local/var/nodebrew
 
 export EDITOR=vi
 
-// // eval "$(rbenv init -)"
+eval "$(/opt/homebrew/bin/brew shellenv)"
+
+# eval "$(rbenv init -)"
 
 #export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
 #PATH=${JAVA_HOME}/bin:${PATH}
@@ -37,6 +39,8 @@ alias v='vim'
 alias grep='ggrep --color=always'
 alias gr='grep'
 alias grr='grep -r'
+
+alias sed='gsed'
 
 alias g='git'
 
@@ -70,5 +74,7 @@ fi
 . "$HOME/.cargo/env"
 
 PS1='[\u \W]$ '
+PROMPT="%n$:%c "
+
 
 
