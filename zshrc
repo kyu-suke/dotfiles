@@ -2,6 +2,8 @@
 
 # export PS1="%~ $ "
 
+bindkey -e
+
 
 export LSCOLORS=gxfxcxdxbxegedabagacad
 export GOPATH=~/go/code/go-local
@@ -17,8 +19,9 @@ export PATH=$HOME/.nodebrew/current/bin:$PATH
 export PATH=/usr/local/var/nodebrew/current/bin:$PATH
 export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-export PATH="$PATH:~/Garage/flutter/bin"
 export PATH="$PATH:$HOME/Library/Python/3.8/bin"
+
+export PATH="$PATH:$HOME/Garage/flutter/bin"
 
 export NODEBREW_ROOT=/usr/local/var/nodebrew
 
