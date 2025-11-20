@@ -114,8 +114,8 @@ command! -nargs=1 -complete=command Enc e ++enc=<args>
 " -------
 " import
 " -------
-if filereadable(expand('~/.secrets/path.vim'))
-  source ~/.secrets/path.vim
+if filereadable(expand('~/.secretenvs/path.vim'))
+  source ~/.secretenvs/path.vim
 endif
 
 "-----------

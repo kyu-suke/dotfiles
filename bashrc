@@ -24,7 +24,7 @@ export NODEBREW_ROOT=/usr/local/var/nodebrew
 
 export EDITOR=vi
 
-// // eval "$(rbenv init -)"
+# eval "$(rbenv init -)"
 
 #export JAVA_HOME=`/usr/libexec/java_home -v "1.8"`
 #PATH=${JAVA_HOME}/bin:${PATH}
@@ -60,8 +60,8 @@ echo -e "\033[1;33m $1 \033[0m"
 # echo $'\e[33m' $1 $'\e[0m'
 }
 
-if [ -e ~/.secrets/bashrc ]; then
-  source ~/.secrets/bashrc
+if [ -e ~/.secretenvs/bashrc ]; then
+  source ~/.secretenvs/bashrc
   echo "file found."
 else
   echo "file NOT found."
@@ -72,3 +72,7 @@ fi
 PS1='[\u \W]$ '
 
 
+
+[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
