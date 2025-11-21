@@ -35,6 +35,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 eval "$(starship init zsh)"
 
+eval "$(mise activate zsh)"
 
 export PATH=/opt/homebrew/bin:$PATH
 export RUBY_CONFIGURE_OPTS="--with-openssl-dir=$(brew --prefix openssl@1.1)"
@@ -54,8 +55,8 @@ export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 #export PYTHONPATH=$HOME/google-cloud-sdk/platform/google_appengine:$PYTHONPATH
 
 
-export NVM_DIR=~/.nvm
-source $(brew --prefix nvm)/nvm.sh
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
 
 eval "$(direnv hook zsh)"
 
@@ -110,16 +111,9 @@ fi
 
 
 
-[[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
+# [[ -s "$HOME/.gvm/scripts/gvm" ]] && source "$HOME/.gvm/scripts/gvm"
 
-
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
-
-# The next line enables shell command completion for gcloud.
-if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 [[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path zsh)"
 
-[[ -s "/Users/usk/.gvm/scripts/gvm" ]] && source "/Users/usk/.gvm/scripts/gvm"
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
